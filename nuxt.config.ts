@@ -3,6 +3,40 @@ import { version } from "./package.json";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "ru",
+      },
+      title: "Movies - Ваша личная коллекцию youtube видео.",
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      meta: [
+        // Viewport
+        {
+          hid: "viewport",
+          name: "viewport",
+          content: "width=device-width, initial-scale=1, maximum-scale=1",
+        },
+        // Phone Number Detection
+        {
+          hid: "format-detection",
+          name: "format-detection",
+          content: "telephone=no",
+        },
+        // Color Scheme (assuming this is the intended meta tag)
+        { hid: "color-scheme", name: "color-scheme", content: "light only" },
+      ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicon.png",
+        },
+      ],
+    },
+  },
   runtimeConfig: {
     public: {
       version,

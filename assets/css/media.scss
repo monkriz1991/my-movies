@@ -3,9 +3,39 @@
     padding: 0 15px;
   }
   .header {
-    padding: 20px 0;
+    padding: 20px 0 40px;
   }
   .movie__page .movie__page-h1 {
     margin: 0 0 30px;
+  }
+  .movie__page .movie__page-info {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 20px;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .movie__page .movie__page-info .movie__page-info--date {
+    margin: 0 25px 10px 0;
+  }
+  .movie__page .movie__page-info .movie__page-info--raiting {
+    font-size: 38px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+  .notification {
+    right: 15px;
+    top: 100px;
+  }
+  .content h1 {
+    font-size: 1.6em;
+  }
+  .content h4,
+  .content h5 {
+    font-size: 1.05em;
   }
 }

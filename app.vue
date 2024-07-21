@@ -1,7 +1,13 @@
 <template>
   <div>
+    <NuxtLoadingIndicator />
     <NuxtLayout>
-      <NuxtPage />
+      <NuxtPage
+        :transition="{
+          name: 'page',
+          mode: 'out-in',
+        }"
+      />
     </NuxtLayout>
   </div>
 </template>

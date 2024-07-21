@@ -18,27 +18,19 @@ const descriptionVideo = ref<string>("");
 const raitingVideo = ref<number>(0);
 const centerDialogVisible = ref<boolean>(false);
 
-const loadMovieData = async () => {
-  dataMovie.value = await movieStore.getIdMovies(String(linkParams.value));
-  if (dataMovie.value != null) {
-    centerDialogVisible.value = true;
-    linkVideo.value = dataMovie.value.movie_id;
-    titleVideo.value = dataMovie.value.title;
-    descriptionVideo.value = dataMovie.value.description;
-    dateVideo.value = dataMovie.value.issue_date;
-    ganreVideo.value = dataMovie.value.genre;
-    raitingVideo.value = dataMovie.value.rating;
-    if (linkVideo.value == "") {
-      linkVideo.value = "TJ6lSSj81LE";
-    }
+dataMovie.value = await movieStore.getIdMovies(String(linkParams.value));
+if (dataMovie.value != null) {
+  centerDialogVisible.value = true;
+  linkVideo.value = dataMovie.value.movie_id;
+  titleVideo.value = dataMovie.value.title;
+  descriptionVideo.value = dataMovie.value.description;
+  dateVideo.value = dataMovie.value.issue_date;
+  ganreVideo.value = dataMovie.value.genre;
+  raitingVideo.value = dataMovie.value.rating;
+  if (linkVideo.value == "") {
+    linkVideo.value = "TJ6lSSj81LE";
   }
-};
-onMounted(() => {
-  loadMovieData();
-});
-watch(linkParams, () => {
-  loadMovieData();
-});
+}
 </script>
 <template>
   <div>
